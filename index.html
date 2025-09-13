@@ -6,8 +6,8 @@
   <title>PTE Practice – Dictation & Situations</title>
   <style>
     :root{
-      --brand:#003366;
-      --brand-2:#0055a5;
+      --brand:#2c3034;
+      --brand-2:#151d25;
       --ink:#222;
       --card:#fff;
       --bg:#f4f7fb;
@@ -152,101 +152,153 @@
       <div id="result-q3" class="result-box"></div>
     </div>
 
-    <!-- ================== PART 2 ================== -->
-    <h2>Part 2. Match each Situation to the correct Response</h2>
-    <p>Drag the correct response into the box next to its matching situation. Only the correct answer will stay. <br>There 3 extra.</p>
+    <h2<!-- ================== PART 2 (Redesigned) ================== -->
+<h2>Part 2. Match each Situation to the correct Response</h2>
+<p>Drag the correct response into the box under each situation. Only the correct answer will stay.</p>
 
-    <div id="part2-frame">
-      <!-- Situations column -->
-      <div id="situations">
+<div id="part2-new">
 
-        <div class="match-item">
-          <label>Situation 4</label>
-          <div class="audio-row">
-            <button class="sq-btn" data-audio="#s4" aria-label="Play Situation 4">▶</button>
-            <audio id="s4"><source src="Situation4.mp3" type="audio/mpeg"></audio>
-          </div>
-          <div class="dropzone" id="dz-q4" ondrop="drop(event,'q4')" ondragover="allowDrop(event)">Drop Response Here</div>
-        </div>
+  <!-- SITUATION 4 -->
+  <section class="p2-card" data-q="q4">
+    <div class="p2-head">
+      <strong>Situation 4</strong>
+      <div class="audio-row">
+        <button class="sq-btn" data-audio="#p2-s4" aria-label="Play Situation 4">▶</button>
+        <audio id="p2-s4"><source src="Situation4.mp3" type="audio/mpeg"></audio>
+      </div>
+    </div>
 
-        <div class="match-item">
-          <label>Situation 5</label>
-          <div class="audio-row">
-            <button class="sq-btn" data-audio="#s5" aria-label="Play Situation 5">▶</button>
-            <audio id="s5"><source src="Situation5.mp3" type="audio/mpeg"></audio>
-          </div>
-          <div class="dropzone" id="dz-q5" ondrop="drop(event,'q5')" ondragover="allowDrop(event)">Drop Response Here</div>
-        </div>
+    <div class="p2-drop dropzone" id="dz-q4" ondrop="p2Drop(event,'q4')" ondragover="p2AllowDrop(event)">
+      Drop Response Here
+    </div>
 
-        <div class="match-item">
-          <label>Situation 6</label>
-          <div class="audio-row">
-            <button class="sq-btn" data-audio="#s6" aria-label="Play Situation 6">▶</button>
-            <audio id="s6"><source src="Situation6.mp3" type="audio/mpeg"></audio>
-          </div>
-          <div class="dropzone" id="dz-q6" ondrop="drop(event,'q6')" ondragover="allowDrop(event)">Drop Response Here</div>
+    <div class="choices">
+      <!-- Correct: A -->
+      <div id="opt-q4-A" class="choice" draggable="true" ondragstart="p2Drag(event)">
+        <span class="tag">Response A</span>
+        <div class="audio-row">
+          <button class="sq-btn" data-audio="#p2-q4-a" aria-label="Play Response A">▶</button>
+          <audio id="p2-q4-a"><source src="Response3.m4a" type="audio/mpeg"></audio>
         </div>
       </div>
 
-      <!-- Responses column (sticky) -->
-      <div id="options">
-        <div id="r1" class="option" draggable="true" ondragstart="drag(event)">
-          <strong>🎧 Response A</strong>
-          <div class="audio-row">
-            <button class="sq-btn" data-audio="#ra" aria-label="Play Response A">▶</button>
-            <audio id="ra"><source src="Response3.m4a" type="audio/mpeg"></audio>
-          </div>
+      <!-- Distractor: C -->
+      <div id="opt-q4-C" class="choice" draggable="true" ondragstart="p2Drag(event)">
+        <span class="tag">Response C</span>
+        <div class="audio-row">
+          <button class="sq-btn" data-audio="#p2-q4-c" aria-label="Play Response C">▶</button>
+          <audio id="p2-q4-c"><source src="Extra3.m4a" type="audio/mpeg"></audio>
         </div>
+      </div>
 
-        <div id="r2" class="option" draggable="true" ondragstart="drag(event)">
-          <strong>🎧 Response B</strong>
-          <div class="audio-row">
-            <button class="sq-btn" data-audio="#rb" aria-label="Play Response B">▶</button>
-            <audio id="rb"><source src="Response6.m4a" type="audio/mpeg"></audio>
-          </div>
-        </div>
-
-        <div id="r3" class="option" draggable="true" ondragstart="drag(event)">
-          <strong>🎧 Response C</strong>
-          <div class="audio-row">
-            <button class="sq-btn" data-audio="#rc" aria-label="Play Response C">▶</button>
-            <audio id="rc"><source src="Extra3.m4a" type="audio/mpeg"></audio>
-          </div>
-        </div>
-
-        <div id="r4" class="option" draggable="true" ondragstart="drag(event)">
-          <strong>🎧 Response D</strong>
-          <div class="audio-row">
-            <button class="sq-btn" data-audio="#rd" aria-label="Play Response D">▶</button>
-            <audio id="rd"><source src="Response2.m4a" type="audio/mpeg"></audio>
-          </div>
-        </div>
-
-        <div id="r5" class="option" draggable="true" ondragstart="drag(event)">
-          <strong>🎧 Response E</strong>
-          <div class="audio-row">
-            <button class="sq-btn" data-audio="#re" aria-label="Play Response E">▶</button>
-            <audio id="re"><source src="Response5.m4a" type="audio/mpeg"></audio>
-          </div>
-        </div>
-
-        <div id="r6" class="option" draggable="true" ondragstart="drag(event)">
-          <strong>🎧 Response F</strong>
-          <div class="audio-row">
-            <button class="sq-btn" data-audio="#rf" aria-label="Play Response F">▶</button>
-            <audio id="rf"><source src="Response1.m4a" type="audio/mpeg"></audio>
-          </div>
-          <p> Now listen to the 3 Extra Answers and imagine the situation question</p>
+      <!-- Distractor: D -->
+      <div id="opt-q4-D" class="choice" draggable="true" ondragstart="p2Drag(event)">
+        <span class="tag">Response D</span>
+        <div class="audio-row">
+          <button class="sq-btn" data-audio="#p2-q4-d" aria-label="Play Response D">▶</button>
+          <audio id="p2-q4-d"><source src="Response2.m4a" type="audio/mpeg"></audio>
         </div>
       </div>
     </div>
+  </section>
+
+  <!-- SITUATION 5 -->
+  <section class="p2-card" data-q="q5">
+    <div class="p2-head">
+      <strong>Situation 5</strong>
+      <div class="audio-row">
+        <button class="sq-btn" data-audio="#p2-s5" aria-label="Play Situation 5">▶</button>
+        <audio id="p2-s5"><source src="Situation5.mp3" type="audio/mpeg"></audio>
+      </div>
+    </div>
+
+    <div class="p2-drop dropzone" id="dz-q5" ondrop="p2Drop(event,'q5')" ondragover="p2AllowDrop(event)">
+      Drop Response Here
+    </div>
+
+    <div class="choices">
+      <!-- Correct: E -->
+      <div id="opt-q5-E" class="choice" draggable="true" ondragstart="p2Drag(event)">
+        <span class="tag">Response E</span>
+        <div class="audio-row">
+          <button class="sq-btn" data-audio="#p2-q5-e" aria-label="Play Response E">▶</button>
+          <audio id="p2-q5-e"><source src="Response5.m4a" type="audio/mpeg"></audio>
+        </div>
+      </div>
+
+      <!-- Distractor: A -->
+      <div id="opt-q5-A" class="choice" draggable="true" ondragstart="p2Drag(event)">
+        <span class="tag">Response A</span>
+        <div class="audio-row">
+          <button class="sq-btn" data-audio="#p2-q5-a" aria-label="Play Response A">▶</button>
+          <audio id="p2-q5-a"><source src="Response3.m4a" type="audio/mpeg"></audio>
+        </div>
+      </div>
+
+      <!-- Distractor: B -->
+      <div id="opt-q5-B" class="choice" draggable="true" ondragstart="p2Drag(event)">
+        <span class="tag">Response B</span>
+        <div class="audio-row">
+          <button class="sq-btn" data-audio="#p2-q5-b" aria-label="Play Response B">▶</button>
+          <audio id="p2-q5-b"><source src="Response6.m4a" type="audio/mpeg"></audio>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SITUATION 6 -->
+  <section class="p2-card" data-q="q6">
+    <div class="p2-head">
+      <strong>Situation 6</strong>
+      <div class="audio-row">
+        <button class="sq-btn" data-audio="#p2-s6" aria-label="Play Situation 6">▶</button>
+        <audio id="p2-s6"><source src="Situation6.mp3" type="audio/mpeg"></audio>
+      </div>
+    </div>
+
+    <div class="p2-drop dropzone" id="dz-q6" ondrop="p2Drop(event,'q6')" ondragover="p2AllowDrop(event)">
+      Drop Response Here
+    </div>
+
+    <div class="choices">
+      <!-- Correct: B -->
+      <div id="opt-q6-B" class="choice" draggable="true" ondragstart="p2Drag(event)">
+        <span class="tag">Response B</span>
+        <div class="audio-row">
+          <button class="sq-btn" data-audio="#p2-q6-b" aria-label="Play Response B">▶</button>
+          <audio id="p2-q6-b"><source src="Response6.m4a" type="audio/mpeg"></audio>
+        </div>
+      </div>
+
+      <!-- Distractor: E -->
+      <div id="opt-q6-E" class="choice" draggable="true" ondragstart="p2Drag(event)">
+        <span class="tag">Response E</span>
+        <div class="audio-row">
+          <button class="sq-btn" data-audio="#p2-q6-e" aria-label="Play Response E">▶</button>
+          <audio id="p2-q6-e"><source src="Response5.m4a" type="audio/mpeg"></audio>
+        </div>
+      </div>
+
+      <!-- Distractor: F -->
+      <div id="opt-q6-F" class="choice" draggable="true" ondragstart="p2Drag(event)">
+        <span class="tag">Response F</span>
+        <div class="audio-row">
+          <button class="sq-btn" data-audio="#p2-q6-f" aria-label="Play Response F">▶</button>
+          <audio id="p2-q6-f"><source src="Response1.m4a" type="audio/mpeg"></audio>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
 
     <!-- ================== PART 3 ================== -->
     <h2>Part 3. Gapfill Listening</h2>
     <p>Listen to the sample describe situation questions and responses, then complete the gapfills.</p>
 
     <div class="gapfill">
-      <label><strong>a. Situation:</strong></label>
+      <label><strong>Situation 7:</strong></label>
       <div class="audio-row">
         <button class="sq-btn" data-audio="#p3a" aria-label="Play Part 3 A">▶</button>
         <audio id="p3a"><source src="amixdown.mp3" type="audio/mpeg"></audio>
@@ -269,7 +321,7 @@
     </div>
 
     <div class="gapfill">
-      <label><strong>b. Situation:</strong></label>
+      <label><strong>Situation 8:</strong></label>
       <div class="audio-row">
         <button class="sq-btn" data-audio="#p3b" aria-label="Play Part 3 B">▶</button>
         <audio id="p3b"><source src="bmixdown.mp3" type="audio/mpeg"></audio>
